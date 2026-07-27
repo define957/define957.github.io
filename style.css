@@ -116,6 +116,42 @@ body {
   color: var(--accent);
 }
 
+/* 教育履历时间线 */
+.timeline {
+  padding-left: 0;
+}
+
+.timeline li {
+  position: relative;
+  padding: 0 0 16px 24px;
+  margin-bottom: 0;
+  border-left: 3px solid var(--border);
+  border-bottom: none;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border: 2px solid var(--border);
+}
+
+.time {
+  display: block;
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.title {
+  display: block;
+  color: var(--fg);
+}
+
 .card a {
   color: var(--accent);
   text-decoration: none;
