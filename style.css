@@ -5,8 +5,6 @@
   --card: #ffffff;
   --border: #2b2b2b;
   --accent: #c25e00;
-  --shadow: 6px 6px 0 rgba(43, 43, 43, 0.18);
-  --texture: rgba(0, 0, 0, 0.06);
   --transition: 0.3s ease;
 }
 
@@ -18,7 +16,6 @@ html[data-theme="dark"] {
   --border: #444444;
   --accent: #ff9f43;
   --shadow: 6px 6px 0 rgba(0, 0, 0, 0.5);
-  --texture: rgba(255, 255, 255, 0.05);
 }
 
 * {
@@ -31,8 +28,6 @@ body {
   font-family: "Courier New", Courier, monospace;
   background-color: var(--bg);
   color: var(--fg);
-  background-image: radial-gradient(var(--texture) 1px, transparent 1px);
-  background-size: 24px 24px;
   line-height: 1.7;
   min-height: 100vh;
   transition: background-color var(--transition), color var(--transition);
