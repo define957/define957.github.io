@@ -62,6 +62,15 @@ body {
   box-shadow: 1px 1px 0 var(--border);
 }
 
+.links a i {
+  margin-right: 8px;
+}
+
+.profile {
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
 /* 内容区：靠左排列 */
 .container {
   max-width: 100%;
@@ -90,6 +99,10 @@ body {
   border-bottom: 3px solid var(--border);
 }
 
+.card h2 .section-icon {
+  margin-right: 10px;
+}
+
 .card p,
 .card ul,
 .card li {
@@ -116,7 +129,47 @@ body {
   color: var(--accent);
 }
 
-/* 教育履历时间线 */
+/* 论文引用列表 */
+.papers li {
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--muted);
+}
+
+.papers li:last-child {
+  border-bottom: none;
+}
+
+.papers li::before {
+  content: none;
+}
+
+.papers a {
+  font-weight: bold;
+}
+
+.papers .meta {
+  display: block;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.papers .authors {
+  color: var(--fg);
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.papers .authors strong {
+  color: var(--accent);
+}
+
+.card p i,
+.card li i {
+  margin-right: 8px;
+  color: var(--accent);
+}
 .timeline {
   padding-left: 0;
 }
