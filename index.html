@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zhang Jiaqi's Home Page</title>
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+  <button id="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+
   <header class="hero">
     <h1>Zhang Jiaqi</h1>
     <p class="tagline">PhD Student in Machine Learning</p>
@@ -82,5 +84,28 @@
   <footer>
     <p>&copy; 2026 define957. Powered by GitHub Pages.</p>
   </footer>
+
+  <script>
+    (function() {
+      const toggle = document.getElementById('theme-toggle');
+      const html = document.documentElement;
+      const icon = toggle.querySelector('i');
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      let isDark = saved ? saved === 'dark' : prefersDark;
+
+      function setTheme(dark) {
+        html.setAttribute('data-theme', dark ? 'dark' : 'light');
+        icon.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        localStorage.setItem('theme', dark ? 'dark' : 'light');
+      }
+
+      setTheme(isDark);
+
+      toggle.addEventListener('click', function() {
+        setTheme(html.getAttribute('data-theme') !== 'dark');
+      });
+    })();
+  </script>
 </body>
 </html>

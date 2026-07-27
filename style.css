@@ -1,11 +1,24 @@
 :root {
   --bg: #f4f1ea;
   --fg: #2b2b2b;
-  --muted: #555555;
+  --muted: #6b6b6b;
   --card: #ffffff;
   --border: #2b2b2b;
   --accent: #c25e00;
   --shadow: 6px 6px 0 rgba(43, 43, 43, 0.18);
+  --texture: rgba(0, 0, 0, 0.06);
+  --transition: 0.3s ease;
+}
+
+html[data-theme="dark"] {
+  --bg: #121212;
+  --fg: #e0e0e0;
+  --muted: #999999;
+  --card: #1a1a1a;
+  --border: #444444;
+  --accent: #ff9f43;
+  --shadow: 6px 6px 0 rgba(0, 0, 0, 0.5);
+  --texture: rgba(255, 255, 255, 0.05);
 }
 
 * {
@@ -16,17 +29,42 @@
 
 body {
   font-family: "Courier New", Courier, monospace;
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--fg);
+  background-image: radial-gradient(var(--texture) 1px, transparent 1px);
+  background-size: 24px 24px;
   line-height: 1.7;
   min-height: 100vh;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+/* 深色/浅色切换按钮 */
+#theme-toggle {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 1000;
+  background: var(--card);
+  color: var(--fg);
+  border: 2px solid var(--border);
+  padding: 10px 14px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--border);
+  transition: transform 0.1s, box-shadow 0.1s, background-color var(--transition), color var(--transition);
+}
+
+#theme-toggle:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--border);
 }
 
 /* 顶部标题 */
 .hero {
-  padding: 60px 20px 30px;
+  padding: 70px 20px 30px;
   border-bottom: 3px solid var(--border);
   background: var(--card);
+  transition: background-color var(--transition), border-color var(--transition);
 }
 
 .hero h1 {
@@ -35,12 +73,14 @@ body {
   margin-bottom: 8px;
   color: var(--border);
   text-transform: uppercase;
+  transition: color var(--transition);
 }
 
 .tagline {
   font-size: 1.1rem;
   color: var(--muted);
   margin-bottom: 22px;
+  transition: color var(--transition);
 }
 
 .links a {
@@ -54,7 +94,7 @@ body {
   font-weight: bold;
   background: var(--bg);
   box-shadow: 3px 3px 0 var(--border);
-  transition: transform 0.1s, box-shadow 0.1s;
+  transition: transform 0.1s, box-shadow 0.1s, background-color var(--transition), color var(--transition), border-color var(--transition);
 }
 
 .links a:hover {
@@ -64,11 +104,6 @@ body {
 
 .links a i {
   margin-right: 8px;
-}
-
-.profile {
-  color: var(--accent);
-  margin-bottom: 12px;
 }
 
 /* 内容区：靠左排列 */
@@ -87,6 +122,7 @@ body {
   width: 100%;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  transition: background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
 .card h2 {
@@ -97,6 +133,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   border-bottom: 3px solid var(--border);
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
 }
 
 .card h2 .section-icon {
@@ -108,6 +145,7 @@ body {
 .card li {
   padding: 18px;
   color: var(--fg);
+  transition: color var(--transition);
 }
 
 .card ul {
@@ -118,6 +156,7 @@ body {
 .card li {
   padding: 8px 0;
   border-bottom: 1px dashed var(--muted);
+  transition: border-color var(--transition);
 }
 
 .card li:last-child {
@@ -127,6 +166,7 @@ body {
 .card li::before {
   content: "> ";
   color: var(--accent);
+  transition: color var(--transition);
 }
 
 /* 论文引用列表 */
@@ -145,6 +185,7 @@ body {
 
 .papers a {
   font-weight: bold;
+  transition: color var(--transition), border-color var(--transition), background-color var(--transition);
 }
 
 .papers .meta {
@@ -153,23 +194,29 @@ body {
   font-size: 0.95rem;
   margin-top: 6px;
   font-style: italic;
+  transition: color var(--transition);
 }
 
 .papers .authors {
   color: var(--fg);
   font-size: 0.95rem;
   margin-bottom: 4px;
+  transition: color var(--transition);
 }
 
 .papers .authors strong {
   color: var(--accent);
+  transition: color var(--transition);
 }
 
 .card p i,
 .card li i {
   margin-right: 8px;
   color: var(--accent);
+  transition: color var(--transition);
 }
+
+/* 教育履历时间线 */
 .timeline {
   padding-left: 0;
 }
@@ -180,6 +227,7 @@ body {
   margin-bottom: 0;
   border-left: 3px solid var(--border);
   border-bottom: none;
+  transition: border-color var(--transition);
 }
 
 .timeline li::before {
@@ -191,6 +239,7 @@ body {
   height: 10px;
   background: var(--accent);
   border: 2px solid var(--border);
+  transition: background-color var(--transition), border-color var(--transition);
 }
 
 .time {
@@ -198,21 +247,28 @@ body {
   font-weight: bold;
   color: var(--accent);
   margin-bottom: 4px;
+  transition: color var(--transition);
 }
 
 .title {
   display: block;
   color: var(--fg);
+  transition: color var(--transition);
 }
 
 .card a {
   color: var(--accent);
   text-decoration: none;
   border-bottom: 1px dotted var(--accent);
+  transition: color var(--transition), border-color var(--transition), background-color var(--transition);
 }
 
 .card a:hover {
   background: rgba(194, 94, 0, 0.12);
+}
+
+html[data-theme="dark"] .card a:hover {
+  background: rgba(255, 159, 67, 0.15);
 }
 
 /* 页脚 */
@@ -223,10 +279,21 @@ footer {
   font-size: 0.9rem;
   text-align: left;
   background: var(--card);
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
 }
 
 /* 移动端 */
 @media (max-width: 600px) {
+  #theme-toggle {
+    top: 12px;
+    right: 12px;
+    padding: 8px 10px;
+  }
+
+  .hero {
+    padding-top: 60px;
+  }
+
   .hero h1 {
     font-size: 1.9rem;
   }
