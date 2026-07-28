@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<article class="card">
+  <h2><i class="fa-solid fa-file-lines section-icon"></i> {{ page.title }}</h2>
+  <p class="post-meta">{{ page.date | date: "%Y-%m-%d" }}{% if page.categories %} · {{ page.categories | join: ", " }}{% endif %}</p>
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>

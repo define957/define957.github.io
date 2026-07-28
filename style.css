@@ -204,6 +204,83 @@ body {
   transition: color var(--transition);
 }
 
+/* 笔记列表与正文 */
+.notes-list li {
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--muted);
+}
+
+.notes-list li:last-child {
+  border-bottom: none;
+}
+
+.notes-list li::before {
+  content: none;
+}
+
+.notes-list a {
+  font-weight: bold;
+}
+
+.notes-list .tags {
+  display: block;
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.post-meta {
+  padding: 0 18px 12px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color var(--transition);
+}
+
+.post-content {
+  padding: 0 18px 18px;
+}
+
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  margin: 18px 0 10px;
+  color: var(--fg);
+  transition: color var(--transition);
+}
+
+.post-content p,
+.post-content ul,
+.post-content ol,
+.post-content pre {
+  margin-bottom: 14px;
+}
+
+.post-content ul,
+.post-content ol {
+  padding-left: 24px;
+}
+
+.post-content li {
+  margin-bottom: 6px;
+}
+
+.post-content pre {
+  background: var(--bg);
+  border: 1px dashed var(--border);
+  padding: 12px;
+  overflow-x: auto;
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.post-content code {
+  font-family: "Courier New", Courier, monospace;
+  background: var(--bg);
+  padding: 2px 5px;
+  border: 1px solid var(--border);
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
 .card p i,
 .card li i {
   margin-right: 8px;

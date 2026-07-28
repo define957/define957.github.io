@@ -1,0 +1,8 @@
+title: "Zhang Jiaqi's Home"
+description: "PhD Student in Machine Learning"
+author: "Zhang Jiaqi"
+baseurl: ""
+url: "https://define957.github.io"
+permalink: /notes/:title/
+markdown: kramdown
+timezone: Asia/Shanghai
