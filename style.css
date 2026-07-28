@@ -328,6 +328,15 @@ body {
   transition: color var(--transition);
 }
 
+.advisor {
+  display: block;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-top: 4px;
+  transition: color var(--transition);
+}
+
 .card a {
   color: var(--accent);
   text-decoration: none;
