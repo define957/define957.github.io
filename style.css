@@ -6,6 +6,7 @@
   --border: #2b2b2b;
   --accent: #c25e00;
   --transition: 0.3s ease;
+  --shadow: 6px 6px 0 rgba(43, 43, 43, 0.15);
 }
 
 html[data-theme="dark"] {
@@ -101,11 +102,19 @@ body {
   margin-right: 8px;
 }
 
-/* 内容区：靠左排列 */
-.container {
-  max-width: 100%;
-  margin: 40px 20px;
-  padding: 0;
+/* 页面布局：主内容 + 侧边栏 */
+.page-wrapper {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  align-items: flex-start;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
 }
 
 .card {
@@ -352,6 +361,164 @@ html[data-theme="dark"] .card a:hover {
   background: rgba(255, 159, 67, 0.15);
 }
 
+/* 侧边栏 */
+.sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 90px;
+}
+
+.sidebar-card {
+  background: var(--card);
+  border: 3px solid var(--border);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  transition: background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.sidebar-card h3 {
+  background: var(--border);
+  color: var(--card);
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 3px solid var(--border);
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.sidebar-card h3 i {
+  margin-right: 8px;
+}
+
+.archive-sub {
+  padding: 10px 14px;
+  border-bottom: 1px dashed var(--muted);
+}
+
+.archive-sub:last-child {
+  border-bottom: none;
+}
+
+.archive-sub h4 {
+  color: var(--fg);
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color var(--transition);
+}
+
+.archive-sub h4 i {
+  margin-right: 8px;
+  color: var(--accent);
+}
+
+.sidebar-card ul {
+  list-style: none;
+  padding: 10px 14px;
+}
+
+.sidebar-card li {
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--muted);
+  transition: border-color var(--transition);
+}
+
+.sidebar-card li:last-child {
+  border-bottom: none;
+}
+
+.sidebar-card a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent);
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: color var(--transition), border-color var(--transition), background-color var(--transition);
+}
+
+.sidebar-card a:hover {
+  background: rgba(194, 94, 0, 0.12);
+}
+
+html[data-theme="dark"] .sidebar-card a:hover {
+  background: rgba(255, 159, 67, 0.15);
+}
+
+.sidebar-card .empty {
+  padding: 12px 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.archive-year {
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--muted);
+}
+
+.archive-year:last-child {
+  border-bottom: none;
+}
+
+.year-toggle {
+  background: none;
+  border: none;
+  color: var(--fg);
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 4px 0;
+  width: 100%;
+  text-align: left;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--transition);
+}
+
+.year-toggle i {
+  color: var(--accent);
+  transition: transform 0.2s, color var(--transition);
+}
+
+.year-toggle[aria-expanded="true"] i {
+  transform: rotate(90deg);
+}
+
+.year-posts {
+  display: none;
+  padding-left: 18px;
+  padding-top: 4px;
+}
+
+.year-toggle[aria-expanded="true"] + .year-posts {
+  display: block;
+}
+
+.data-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.data-list .desc {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.data-list .tags {
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
 /* 页脚 */
 footer {
   padding: 30px 20px;
@@ -364,7 +531,7 @@ footer {
 }
 
 /* 移动端 */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   #theme-toggle {
     top: 12px;
     right: 12px;
@@ -385,7 +552,18 @@ footer {
     max-width: 220px;
   }
 
-  .container {
+  .page-wrapper {
+    flex-direction: column;
     margin: 30px 16px;
+    padding: 0;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: static;
   }
 }

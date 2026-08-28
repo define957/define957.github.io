@@ -1,114 +1,67 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zhang Jiaqi's Home Page</title>
-  <link rel="stylesheet" href="style.css?v=9">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
-  <button id="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+---
+layout: default
+title: Home
+---
 
-  <header class="hero">
-    <h1>Zhang Jiaqi</h1>
-    <p class="tagline">PhD Student in Machine Learning</p>
-    <div class="links">
-      <a href="https://github.com/define957" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-      <a href="notes/"><i class="fa-solid fa-book"></i> Notes</a>
-    </div>
-  </header>
+<section class="card">
+  <h2><i class="fa-solid fa-graduation-cap section-icon"></i> Education</h2>
+  <ul class="timeline">
+    <li>
+      <span class="time">2018.09 - 2022.06</span>
+      <span class="title">Undergraduate, Chongqing Normal University</span>
+    </li>
+    <li>
+      <span class="time">2022.09 - 2024.06</span>
+      <span class="title">Master's, Chongqing University</span>
+      <span class="advisor">Advisor: Hu Yang</span>
+    </li>
+    <li>
+      <span class="time">2024.09 - now</span>
+      <span class="title">PhD Student, Chongqing University</span>
+      <span class="advisor">Advisor: Hu Yang</span>
+    </li>
+  </ul>
+</section>
 
-  <main class="container">
-    <section class="card">
-      <h2><i class="fa-solid fa-graduation-cap section-icon"></i> Education</h2>
-      <ul class="timeline">
-        <li>
-          <span class="time">2018.09 - 2022.06</span>
-          <span class="title">Undergraduate, Chongqing Normal University</span>
-        </li>
-        <li>
-          <span class="time">2022.09 - 2024.06</span>
-          <span class="title">Master's, Chongqing University</span>
-          <span class="advisor">Advisor: Hu Yang</span>
-        </li>
-        <li>
-          <span class="time">2024.09 - now</span>
-          <span class="title">PhD Student, Chongqing University</span>
-          <span class="advisor">Advisor: Hu Yang</span>
-        </li>
-      </ul>
-    </section>
+<section class="card">
+  <h2><i class="fa-solid fa-flask section-icon"></i> Research Interests</h2>
+  <ul>
+    <li>Robust support vector machines (SVMs) and kernel-based learning methods</li>
+    <li>Machine learning with noisy or corrupted data</li>
+    <li>Large-scale optimization</li>
+  </ul>
+</section>
 
-    <section class="card">
-      <h2><i class="fa-solid fa-flask section-icon"></i> Research Interests</h2>
-      <ul>
-        <li>Robust support vector machines (SVMs) and kernel-based learning methods</li>
-        <li>Machine learning with noisy or corrupted data</li>
-        <li>Large-scale optimization</li>
-      </ul>
-    </section>
+<section class="card">
+  <h2><i class="fa-solid fa-file-lines section-icon"></i> Papers</h2>
+  <ul class="papers">
+    <li>
+      <div class="authors"><strong>Jiaqi Zhang</strong>, Hu Yang</div>
+      <a href="https://www.sciencedirect.com/science/article/pii/S095741742303261X" target="_blank" rel="noopener noreferrer">Bounded quantile loss for robust support vector machines-based classification and regression</a>
+      <span class="meta">Expert Systems with Applications, 2024.</span>
+    </li>
+    <li>
+      <div class="authors"><strong>Jiaqi Zhang</strong>, Hu Yang</div>
+      <a href="https://www.sciencedirect.com/science/article/abs/pii/S1474034625002642" target="_blank" rel="noopener noreferrer">Robust support vector machine based on the bounded asymmetric least squares loss function and its applications in noise corrupted data</a>
+      <span class="meta">Advanced Engineering Informatics, 2025.</span>
+    </li>
+    <li>
+      <div class="authors">Xue Li, <strong>Jiaqi Zhang</strong>, Hu Yang</div>
+      <a href="https://link.springer.com/article/10.1007/s00521-025-11237-y" target="_blank" rel="noopener noreferrer">Valley-loss multiple birth support vector machine for multi-class classification</a>
+      <span class="meta">Neural Computing and Applications, 2025.</span>
+    </li>
+  </ul>
+</section>
 
-    <section class="card">
-      <h2><i class="fa-solid fa-file-lines section-icon"></i> Papers</h2>
-      <ul class="papers">
-        <li>
-          <div class="authors"><strong>Jiaqi Zhang</strong>, Hu Yang</div>
-          <a href="https://www.sciencedirect.com/science/article/pii/S095741742303261X" target="_blank" rel="noopener noreferrer">Bounded quantile loss for robust support vector machines-based classification and regression</a>
-          <span class="meta">Expert Systems with Applications, 2024.</span>
-        </li>
-        <li>
-          <div class="authors"><strong>Jiaqi Zhang</strong>, Hu Yang</div>
-          <a href="https://www.sciencedirect.com/science/article/abs/pii/S1474034625002642" target="_blank" rel="noopener noreferrer">Robust support vector machine based on the bounded asymmetric least squares loss function and its applications in noise corrupted data</a>
-          <span class="meta">Advanced Engineering Informatics, 2025.</span>
-        </li>
-        <li>
-          <div class="authors">Xue Li, <strong>Jiaqi Zhang</strong>, Hu Yang</div>
-          <a href="https://link.springer.com/article/10.1007/s00521-025-11237-y" target="_blank" rel="noopener noreferrer">Valley-loss multiple birth support vector machine for multi-class classification</a>
-          <span class="meta">Neural Computing and Applications, 2025.</span>
-        </li>
-      </ul>
-    </section>
+<section class="card">
+  <h2><i class="fa-solid fa-code section-icon"></i> Projects</h2>
+  <ul>
+    <li><a href="https://github.com/define957/SupportVectorLab" target="_blank" rel="noopener noreferrer">SupportVectorLab</a> — An advanced toolkit for support vector machines in R.</li>
+  </ul>
+</section>
 
-    <section class="card">
-      <h2><i class="fa-solid fa-code section-icon"></i> Projects</h2>
-      <ul>
-        <li><a href="https://github.com/define957/SupportVectorLab" target="_blank" rel="noopener noreferrer">SupportVectorLab</a> — An advanced toolkit for support vector machines in R.</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2><i class="fa-solid fa-address-card section-icon"></i> Contact Me</h2>
-      <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> <a href="mailto:zhangjiaqi957957@outlook.com">zhangjiaqi957957@outlook.com</a></p>
-      <p><i class="fa-brands fa-orcid"></i> <strong>ORCID:</strong> <a href="https://orcid.org/0009-0002-7162-637X" target="_blank" rel="noopener noreferrer">0009-0002-7162-637X</a></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 define957. Powered by GitHub Pages.</p>
-  </footer>
-
-  <script>
-    (function() {
-      const toggle = document.getElementById('theme-toggle');
-      const html = document.documentElement;
-      const icon = toggle.querySelector('i');
-      const saved = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      let isDark = saved ? saved === 'dark' : prefersDark;
-
-      function setTheme(dark) {
-        html.setAttribute('data-theme', dark ? 'dark' : 'light');
-        icon.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
-        localStorage.setItem('theme', dark ? 'dark' : 'light');
-      }
-
-      setTheme(isDark);
-
-      toggle.addEventListener('click', function() {
-        setTheme(html.getAttribute('data-theme') !== 'dark');
-      });
-    })();
-  </script>
-</body>
-</html>
+<section class="card">
+  <h2><i class="fa-solid fa-address-card section-icon"></i> Contact Me</h2>
+  <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> <a href="mailto:zhangjiaqi957957@outlook.com">zhangjiaqi957957@outlook.com</a></p>
+  <p><i class="fa-brands fa-orcid"></i> <strong>ORCID:</strong> <a href="https://orcid.org/0009-0002-7162-637X" target="_blank" rel="noopener noreferrer">0009-0002-7162-637X</a></p>
+</section>
