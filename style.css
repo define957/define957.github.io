@@ -57,10 +57,16 @@ body {
 
 /* 顶部标题 */
 .hero {
-  padding: 70px 20px 30px;
+  padding: 70px 0 30px;
   border-bottom: 3px solid var(--border);
   background: var(--card);
   transition: background-color var(--transition), border-color var(--transition);
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 
 .hero h1 {
@@ -108,7 +114,7 @@ body {
   gap: 30px;
   max-width: 1200px;
   margin: 40px auto;
-  padding: 0 20px;
+  padding: 0 10px;
   align-items: flex-start;
 }
 
