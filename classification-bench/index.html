@@ -1,0 +1,38 @@
+---
+layout: default
+title: Classification Benchmark
+---
+
+<section class="card">
+  <h2><i class="fa-solid fa-database section-icon"></i> Binary Classification Datasets</h2>
+  <div class="bench-scroll">
+  <table class="bench-table">
+    <thead>
+      <tr>
+        <th>Dataset</th>
+        <th>Samples</th>
+        <th>Features</th>
+        <th>Majority / Minority</th>
+        <th>Imbalance Ratio</th>
+        <th>Download</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>monk_2</td>
+        <td>432</td>
+        <td>6</td>
+        <td>228 / 204</td>
+        <td>1.12</td>
+        <td class="bench-actions">
+          <a class="bench-btn" href="{{ '/classification-bench/binary/monk_2.csv' | relative_url }}" download><i class="fa-solid fa-file-csv"></i> CSV</a>
+          <a class="bench-btn" href="{{ '/classification-bench/binary/monk_2.Rda' | relative_url }}" download><i class="fa-solid fa-file-arrow-down"></i> Rda</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="bench-note">
+    Imbalance ratio = #majority / #minority. An ideal balanced dataset has ratio 1.
+  </p>
+</section>

@@ -424,6 +424,23 @@ html[data-theme="dark"] .card a:hover {
   color: var(--accent);
 }
 
+.archive-list {
+  list-style: none;
+  padding: 4px 0 8px;
+  margin: 0;
+}
+
+.archive-list li {
+  padding: 4px 0;
+  border-bottom: none;
+}
+
+.archive-meta {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-left: 6px;
+}
+
 .sidebar-card ul {
   list-style: none;
   padding: 10px 14px;
@@ -523,6 +540,69 @@ html[data-theme="dark"] .sidebar-card a:hover {
 .data-list .tags {
   color: var(--accent);
   font-size: 0.8rem;
+}
+
+/* 分类基准数据集 */
+.bench-scroll {
+  overflow-x: auto;
+}
+
+.bench-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  border: 2px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.bench-table th,
+.bench-table td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.bench-table td {
+  white-space: nowrap;
+}
+
+.bench-table th {
+  background: var(--bg);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.bench-actions .bench-btn {
+  margin-right: 8px;
+}
+
+.bench-actions .bench-btn:last-child {
+  margin-right: 0;
+}
+
+.bench-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 2px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+  box-shadow: 3px 3px 0 var(--border);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.bench-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--border);
+  color: var(--accent);
+}
+
+.bench-note {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
 /* 页脚 */
