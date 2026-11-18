@@ -545,6 +545,7 @@ html[data-theme="dark"] .sidebar-card a:hover {
 /* 分类基准数据集 */
 .bench-scroll {
   overflow-x: auto;
+  padding: 18px;
 }
 
 .bench-table {
